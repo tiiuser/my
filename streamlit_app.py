@@ -49,13 +49,13 @@ def generate_response(openai_api_key, query_text):
         return response.choices[0].message.content
 
 # Page title
-st.set_page_config(page_title='🦜🔗 Ask the Doc App')
-st.title('🦜🔗 Ask the Doc App')
+st.set_page_config(page_title='DamageIdenGPT')
+st.title('DamageIdenGPT')
 
 # File upload
 # uploaded_file = st.file_uploader('Upload an article', type='txt')
 # Query text
-query_text = st.text_input('Enter your question:', placeholder = 'Please provide the abstract you want to process for Damage Identification task.')
+query_text = st.text_area('Enter your abstract:', placeholder = 'Please provide the abstract you want to process for Damage Identification task.')
 
 # Form input and query
 result = []
