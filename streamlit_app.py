@@ -37,6 +37,7 @@ def generate_response(openai_api_key, query_text):
         system_message = "You are a helpful literature analyst, you can help extract the useful information from an abstract for the following topics: 1. input data used, 2. features of the input data used, 3. model used, 4. output given"
         test_record = convert_test_conversation(query_text, system_message=system_message)
         fine_tuned_model_id = 'ft:gpt-3.5-turbo-0613:weclouddata:fiqa:8nLzwa3N'
+        client = OpenAI(api_key=openai_api_key)
         response = client.chat.completions.create(model=fine_tuned_model_id, messages=item, temperature=0, max_tokens=500)
         # embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
         # Create a vectorstore from documents
